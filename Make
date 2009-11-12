@@ -2,7 +2,7 @@
 leavemult.v
 -custom
 	"@echo '********* Test on one example **********'
-	ocaml test.ml
+	$(CAMLBIN)ocaml test.ml
 	@echo '************ End of test ***************'"
   "" test
 
