@@ -89,7 +89,7 @@ Theorem trivialalgo : forall t : nat_tree, SPECIF t.
 intro t.
 unfold SPECIF in |- *. 
 apply exist with (leavemult t); auto with v62.
-Qed.
+Defined.
 
 
 (* Here we  define a predicate "Has an occurrence of O" 
@@ -256,7 +256,7 @@ simpl in |- *.
 rewrite eg2; rewrite eg1.
 auto with v62.
 
-Qed.
+Defined.
 
 
 (* Old extraction
