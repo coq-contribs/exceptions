@@ -39,6 +39,8 @@
 (*                               leavemult.v                                *)
 (****************************************************************************)
 
+Set Asymmetric Patterns.
+
 Require Import Arith.
 
 
