@@ -1,8 +1,6 @@
 -R . Exceptions
 leavemult.v
--custom
+-extra test leavemult.vo
 	"@echo '********* Test on one example **********'
 	$(CAMLBIN)ocaml test.ml
 	@echo '************ End of test ***************'"
-  "" test
-
