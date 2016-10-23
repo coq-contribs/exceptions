@@ -90,7 +90,7 @@ Theorem trivialalgo : forall t : nat_tree, SPECIF t.
 
 intro t.
 unfold SPECIF in |- *. 
-apply exist with (leavemult t); auto with v62.
+apply exist with (leavemult t); auto.
 Defined.
 
 
@@ -112,11 +112,11 @@ Fixpoint Has_Zero (t : nat_tree) : Prop :=
 Lemma zero_occ : forall t : nat_tree, Has_Zero t -> leavemult t = 0.
 
 simple induction t.
-simple induction d; simpl in |- *; auto with v62. intros t1 H1 t2 H2 H.
+simple induction d; simpl in |- *; auto. intros t1 H1 t2 H2 H.
 simpl in |- *. elim H; intro H0.
-cut (leavemult t1 = 0). intro H3. rewrite H3; simpl in |- *; auto with v62. auto with v62.
+cut (leavemult t1 = 0). intro H3. rewrite H3; simpl in |- *; auto. auto.
 cut (leavemult t2 = 0). intro H3. rewrite H3; simpl in |- *.
-symmetry  in |- *; apply mult_n_O. auto with v62.
+symmetry  in |- *; apply mult_n_O. auto.
 Qed.
 
 
@@ -151,7 +151,7 @@ subgoal 2 is:
 2: apply exist with 0.
 2: symmetry  in |- *.
 2: apply zero_occ.
-2: auto with v62.
+2: auto.
 
 (*
 1 subgoal
@@ -162,18 +162,18 @@ subgoal 2 is:
 
 *)
 
-Hint Unfold subtree_ersatz: v62.
-Hint Unfold kappa: v62.
+Hint Unfold subtree_ersatz.
+Hint Unfold kappa.
 
 cut (forall t' : nat_tree, subtree_ersatz t' t -> kappa t t' -> SPECIF t).
-Hint Unfold SPECIF: v62.
+Hint Unfold SPECIF.
 
 intro AUX.
 apply AUX with t.
-auto with v62.
+auto.
 unfold kappa in |- *.
 intros n H.
-unfold SPECIF in |- *; apply exist with n; auto with v62.
+unfold SPECIF in |- *; apply exist with n; auto.
 
 (*
 1 subgoal
@@ -189,19 +189,19 @@ simple induction d.
 intros H H0.
 apply ESCAPE_O.
 apply H. simpl in |- *.
-auto with v62.
+auto.
 intros y H1 H2 H3.
 unfold kappa in H3.
 apply H3 with (S y).
 simpl in |- *.
-auto with v62.
+auto.
 
 intro t1. intro ind1. intro t2. intro ind2. intros H H0.
 apply ind2.
 intro H1.
 apply H.
 unfold Has_Zero in |- *.
-unfold Has_Zero in H1. auto with v62.
+unfold Has_Zero in H1. auto.
 (*
 
 1 subgoal
@@ -250,13 +250,13 @@ intros n2 eg2.
 apply ind1.
 intro.
 apply H.
-simpl in |- *; auto with v62.
+simpl in |- *; auto.
 unfold kappa in |- *.
 intros n1 eg1.
 apply H0 with (n1 * n2).
 simpl in |- *.
 rewrite eg2; rewrite eg1.
-auto with v62.
+auto.
 
 Defined.
 
