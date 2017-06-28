@@ -285,4 +285,5 @@ kappa ==> nat->SPECIF
 
 *)
 
+Require Extraction.
 Extraction "leavemult.ml" SPECIF kappa trivialalgo cpsalgo.
